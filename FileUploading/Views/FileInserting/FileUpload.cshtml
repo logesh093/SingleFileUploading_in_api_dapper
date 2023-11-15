@@ -1,0 +1,33 @@
+﻿@model FileUploading.Models.Iformfile;
+
+@{
+    ViewData["Title"] = "Single File Upload";
+    string message = TempData["message"] != null ? TempData["message"].ToString() : string.Empty;
+}
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert alert-success" style="width:300px;margin-left:70%;">@message</div>
+}
+
+@using (Html.BeginForm("FileUpload", "FileInserting", FormMethod.Post, new { id = "formvalidation", enctype = "multipart/form-data" }))
+{
+
+   @*  @Html.HiddenFor(m=>m.Candidate_Id)
+    <form style="width:40%;height:200px;border-color:black;border-style:solid;">
+        @Html.Label("Candidate Name")<br>
+        @Html.TextBoxFor(m=>m.Name)<br>
+        @Html.Label("Candidate Age")<br>
+        @Html.TextBoxFor(m=>m.Age)<br>
+        @Html.Label("Qualification")<br>
+        @Html.TextBoxFor(m=>m.Qualification)<br> *@
+
+        @Html.Label("File")<br>
+        @Html.TextBoxFor(model=>model.File, new { type = "file" })<br>
+   @*  @Html.Label("Name")<br />
+   
+    @Html.TextBoxFor(model=>model.name, new { type = "text" })<br />*@
+    
+     <input type="submit" value="Submit" /> 
+   @*  </form> *@
+                        
+}

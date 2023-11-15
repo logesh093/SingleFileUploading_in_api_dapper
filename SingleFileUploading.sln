@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileUploading", "FileUploading\FileUploading.csproj", "{721DD6DF-D0E5-4E36-AA2B-AA4DB67011F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity", "Entity\Entity.csproj", "{1E9DC330-C616-4A31-A561-D12B9CA9AE31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUploading.API", "FileUploading.API\FileUploading.API.csproj", "{39983E78-650A-4323-8E74-01C8CFC1B75B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUploading.Core", "FileUploading.Core\FileUploading.Core.csproj", "{B38C1DF4-7DFE-45F8-A0D4-4F8C6E93A35B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUpload.Repository", "FileUpload.Repository\FileUpload.Repository.csproj", "{CDEDE320-7EBC-440B-89E0-2BFA0E21C7BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUpload.Services", "FileUpload.Services\FileUpload.Services.csproj", "{0028D009-D74C-4773-A08A-F3A4AA6B81C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{FF5999FF-D0F0-4029-B2BE-CD862BD0352E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{721DD6DF-D0E5-4E36-AA2B-AA4DB67011F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{721DD6DF-D0E5-4E36-AA2B-AA4DB67011F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{721DD6DF-D0E5-4E36-AA2B-AA4DB67011F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{721DD6DF-D0E5-4E36-AA2B-AA4DB67011F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E9DC330-C616-4A31-A561-D12B9CA9AE31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E9DC330-C616-4A31-A561-D12B9CA9AE31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E9DC330-C616-4A31-A561-D12B9CA9AE31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E9DC330-C616-4A31-A561-D12B9CA9AE31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39983E78-650A-4323-8E74-01C8CFC1B75B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39983E78-650A-4323-8E74-01C8CFC1B75B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39983E78-650A-4323-8E74-01C8CFC1B75B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39983E78-650A-4323-8E74-01C8CFC1B75B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B38C1DF4-7DFE-45F8-A0D4-4F8C6E93A35B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B38C1DF4-7DFE-45F8-A0D4-4F8C6E93A35B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B38C1DF4-7DFE-45F8-A0D4-4F8C6E93A35B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B38C1DF4-7DFE-45F8-A0D4-4F8C6E93A35B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDEDE320-7EBC-440B-89E0-2BFA0E21C7BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDEDE320-7EBC-440B-89E0-2BFA0E21C7BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDEDE320-7EBC-440B-89E0-2BFA0E21C7BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEDE320-7EBC-440B-89E0-2BFA0E21C7BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0028D009-D74C-4773-A08A-F3A4AA6B81C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0028D009-D74C-4773-A08A-F3A4AA6B81C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0028D009-D74C-4773-A08A-F3A4AA6B81C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0028D009-D74C-4773-A08A-F3A4AA6B81C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF5999FF-D0F0-4029-B2BE-CD862BD0352E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF5999FF-D0F0-4029-B2BE-CD862BD0352E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF5999FF-D0F0-4029-B2BE-CD862BD0352E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF5999FF-D0F0-4029-B2BE-CD862BD0352E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4FF8272-1C4C-4E26-AD21-7CF6DD94F3A3}
+	EndGlobalSection
+EndGlobal
