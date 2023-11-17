@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.20.0" />
     <PackageReference Include="Microsoft.AspNet.SignalR.Core" Version="2.4.3" />
+    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.51" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
   </ItemGroup>
 

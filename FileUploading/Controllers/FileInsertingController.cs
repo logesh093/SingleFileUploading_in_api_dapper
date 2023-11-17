@@ -103,7 +103,13 @@ namespace FileUploading.Controllers
 
         }
         public IActionResult PreviewResume(int id)
+        {  
+           TempData["id"]=id;
+           return PartialView();
+        }
+        public IActionResult PartialPreviewResume()
         {
+            int id = Convert.ToInt32(TempData["id"]);
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("https://localhost:7224/api/FileUploadAPI/GetCandidateDetailById");
@@ -111,30 +117,12 @@ namespace FileUploading.Controllers
                 if (checkresult.IsSuccessStatusCode)
                 {
                     var result = checkresult.Content.ReadFromJsonAsync<SingleFileModel>().Result;
-                    ViewBag.bytefile = result.filesview;
-                    ViewBag.ContentType = result.ContentType;
-                    //var fileContentResult = new FileContentResult(result.filesview, result.ContentType);
-                    return PartialView();
+                    ViewBag.FileName = result.filesname;
+                    return new FileContentResult(result.filesview, result.ContentType);
                 }
-
-                return View("CandidateDashBoard");
+                return RedirectToAction("CandidateDashBoard");
             }
+
         }
-        //public IActionResult PreviewResume(int id)
-        //{
-        //    using (var client = new HttpClient())
-        //    {
-        //        client.BaseAddress = new Uri("https://localhost:7224/api/FileUploadAPI/GetCandidateDetailById");
-        //        var checkresult = client.GetAsync("GetCandidateDetailById?id=" + id).Result;
-        //        if (checkresult.IsSuccessStatusCode)
-        //        {
-        //            var result = checkresult.Content.ReadFromJsonAsync<SingleFileModel>().Result;
-        //            ViewBag.FileName = result.filesname;
-        //            return new FileContentResult(result.filesview, result.ContentType);
-        //        }
-        //        return View("CandidateDashBoard");
-        //    }
-        //
-        //}
     }
 }
