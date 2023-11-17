@@ -16,11 +16,11 @@
    "T4TemplatePath": null,
    "Tables": [
       {
-         "Name": "[dbo].[Candidate_Detail]",
+         "Name": "[dbo].[File_Upload]",
          "ObjectType": 0
       }
    ],
-   "UiHint": "(localdb)\\STS821-LOGESH.EmployeeDB",
+   "UiHint": "(localdb)\\STS821-LOGESH.demo",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": true,

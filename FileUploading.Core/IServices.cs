@@ -9,6 +9,8 @@ namespace FileUploading.Core
 {
     public interface IServices
     {
-        public void Fileupload(SingleFileModel model);
+        public bool Fileupload(SingleFileModel model);
+        public List<SingleFileModel> CandidateDashBoard();
+        public SingleFileModel GetCandidateDetailById(int id);
     }
 }

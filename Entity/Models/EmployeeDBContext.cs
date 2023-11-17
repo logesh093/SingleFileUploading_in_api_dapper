@@ -17,34 +17,28 @@ public partial class EmployeeDBContext : DbContext
     {
     }
 
-    public virtual DbSet<Candidate_Detail> Candidate_Details { get; set; }
+    public virtual DbSet<File_Upload> File_Uploads { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=(localdb)\\STS821-LOGESH;Initial Catalog=EmployeeDB;Integrated Security=True");
+        => optionsBuilder.UseSqlServer("Data Source=(localdb)\\STS821-LOGESH;Initial Catalog=demo;Integrated Security=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Candidate_Detail>(entity =>
+        modelBuilder.Entity<File_Upload>(entity =>
         {
-            entity.HasKey(e => e.Candidate_Id);
+            entity.HasKey(e => e.File_Id);
 
-            entity.ToTable("Candidate_Detail");
+            entity.ToTable("File_Upload");
 
-            entity.Property(e => e.Candidate_FileData).IsRequired();
-            entity.Property(e => e.File_Content_Type)
+            entity.Property(e => e.Byte_File).IsRequired();
+            entity.Property(e => e.Content_Type)
                 .IsRequired()
+                .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.File_Name)
                 .IsRequired()
-                .IsUnicode(false);
-            entity.Property(e => e.Name)
-                .IsRequired()
-                .HasMaxLength(20)
-                .IsUnicode(false);
-            entity.Property(e => e.Qualification)
-                .IsRequired()
-                .HasMaxLength(20)
+                .HasMaxLength(50)
                 .IsUnicode(false);
         });
 

@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,10 +16,18 @@ namespace FileUpload.Services
         {
             _repository = repository;
         }
-        public void Fileupload(SingleFileModel model)
+        public bool Fileupload(SingleFileModel model)
         {
-             _repository.Fileupload(model);
+             return _repository.Fileupload(model);
         }
-        
+        public List<SingleFileModel> CandidateDashBoard()
+        {
+            return _repository.CandidateDashBoard();
+        }
+        public SingleFileModel GetCandidateDetailById(int id)
+        {
+            return _repository.GetCandidateDetailById(id);
+        }
+
     }
 }

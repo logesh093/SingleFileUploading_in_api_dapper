@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<head>
+    <title>Candidate Resume</title>
+    <style>
+        .partialViewWrapper {
+            
+            overflow-y: auto;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body >   
+    <div class="partialViewWrapper">
+       
+        <iframe src="@Url.Action("PreviewResume")" width="600" height="400"></iframe>
+        <a href="@Url.Action("DownloadResume")" download="@ViewBag.FileName"><button type="submit">Download File<i class="fa fa-download"></i> </button></a>
+    </div>
+</body>
