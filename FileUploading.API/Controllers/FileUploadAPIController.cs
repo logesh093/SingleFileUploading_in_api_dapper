@@ -10,10 +10,20 @@ namespace FileUploading.API.Controllers
     public class FileUploadAPIController : ControllerBase
     {
         private readonly IServices _services;
-
-        public FileUploadAPIController(IServices services)
+        private readonly IConfiguration _configuration;
+        public FileUploadAPIController(IServices services, IConfiguration configuration)
         {
             _services = services;
+            _configuration = configuration;
+        }
+       
+        
+        [HttpGet]
+        [Route("GetIsLive")]
+        public bool GetIsLive()
+        {
+            var IsLive = _configuration.GetValue<bool>("IsLive");
+            return IsLive;
         }
 
         [HttpPost]

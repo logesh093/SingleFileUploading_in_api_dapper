@@ -2,43 +2,52 @@
 
 @{
     ViewData["Title"] = "Single File Upload";
-    string message = TempData["message"] != null ? TempData["message"].ToString() : string.Empty;
+   
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <head>
-    <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" href="sweetalert2.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<body>
-    @if (!string.IsNullOrEmpty(message))
-    {
-        <div class="alert alert-success" style="width:300px;margin-left:70%;">@message</div>
-    }
-
-    @using (Html.BeginForm("FileUpload", "FileInserting", FormMethod.Post, new { id = "formvalidation", enctype = "multipart/form-data" }))
-    {
-
-        @Html.HiddenFor(m=>m.id)
-        <form style="width:40%;height:200px;border-color:black;border-style:solid;">
-            @Html.Label("Candidate Name")<br>
-            @Html.TextBoxFor(m=>m.Name)<br>
-            @Html.Label("Candidate Age")<br>
-            @Html.TextBoxFor(m=>m.Age)<br>
-            @Html.Label("Qualification")<br>
-            @Html.TextBoxFor(m=>m.Qualification)<br>
-
-            @Html.Label("Resume")<br>
-            @Html.TextBoxFor(model=>model.file, new { type = "file" })<br>
    
-    
-            <input type="submit" value="Submit" /> 
-        </form>
-                        
-    }
+    <style>
+        .error {
+            color: red;
+            font-weight: 700;
+        }
+        #formvalidation
+        {
+            width:300px;
+            height:300px;
+        }
+
+        .background {
+            background: url(/Images/Background.jpg)no-repeat;
+            background-size: cover;
+        }
+    </style>
+ 
+</head>
+<body class="background">
+  <center>
+        @using (Html.BeginForm("FileUpload", "FileInserting", FormMethod.Post, new { id = "formvalidation", enctype = "multipart/form-data" }))
+        {
+
+            @Html.HiddenFor(m=>m.id)
+            <form style="width:40%;height:200px;border-color:black;border-style:solid;">
+                <b>@Html.Label("Candidate Name")<i style="color:red;">*</i></b><br>
+                @Html.TextBoxFor(m=>m.Name,new{@id="Name",@minlength=3,@maxlength=20})<br>
+                <b>@Html.Label("Candidate Age")<i style="color:red;">*</i></b><br>
+                @Html.TextBoxFor(m=>m.Age,new{@id="Age"})<br>
+                <b>@Html.Label("Qualification")<i style="color:red;">*</i></b><br>
+                @Html.TextBoxFor(m=>m.Qualification,new{@id="Qualification"})<br>
+
+                <b>@Html.Label("Resume")<i style="color:red;">*</i></b><br>
+                @Html.TextBoxFor(model=>model.file, new { type = "file" ,@id="file",@style="margin-left:53px;"})<br><br>
+
+
+                <input type="submit" value="Submit" />
+            </form>
+
+        }
+  </center>  
 </body>
 
 <script>
@@ -47,4 +56,54 @@
             $(".alert").fadeOut("slow");
         }, 4000);
     }
+            
+    $("#formvalidation").validate(
+        {
+            rules:
+            {
+                Name:
+                {
+                    required: true,
+                    digits: false,
+                },
+                Age:
+                {
+                    required:true,
+                    digits:true,
+                },
+                Qualification:
+                {
+                    required:true,
+                    digits:false,
+                },
+                file:
+                {
+                        required:true,
+                }
+            },
+            messages:
+            {
+                Name:
+                {
+                    required: "Name field is required",
+                    digits: "numberic not allowed",
+                },
+                Age:
+                {
+                    required: "Age field is requied",
+                    digits: "characters not allowed",
+                },
+                Qualification:
+                {
+                    required: "Qualification field is required",
+                    digits: "numeric not allowed",
+                },
+                file:
+                    {
+                        required:"Need to upload file"
+                    }
+            }
+        }
+    );
+
 </script>

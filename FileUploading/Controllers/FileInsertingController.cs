@@ -49,7 +49,7 @@ namespace FileUploading.Controllers
                         if (loginId)
                         {
 
-                            TempData["Message"] = "File Uploaded Succuessfully... ";
+                            TempData["Message"] = "Job applied Succuessfully... ";
 
                             return RedirectToAction("CandidateDashBoard");
                         }
